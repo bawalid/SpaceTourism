@@ -1,0 +1,830 @@
+/* Global styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Bellefair', serif;
+}
+
+p {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+body {
+  color: #fff;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+header #logo {
+  aspect-ratio: 1 / 1;
+  width: 40px;
+}
+
+/* Navigation */
+#navigationFull {
+  display: none;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 33px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65vw;
+  z-index: 100;
+}
+
+#navigation #menuIcon {
+  align-self: flex-end;
+  height: 24px;
+  width: 24px;
+}
+
+#navigation #menuItems {
+  display: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  gap: 35px;
+  margin-top: 65px;
+}
+
+#menuItems li {
+  letter-spacing: 0.2em;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+#navigation.open {
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  background: rgba(62, 62, 62, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(103, 103, 103, 0.37);
+  height: 100vh;
+}
+
+#navigation.open #menuItems {
+  display: inline;
+}
+
+main {
+  margin: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 136px);
+  justify-content: space-around;
+}
+
+.topIndex {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.topIndex p:first-child,
+p:last-child {
+  color: #d0d6f9;
+}
+
+.topIndex p:first-child {
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.topIndex h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.topIndex p:last-child {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.25em;
+}
+
+.explore {
+  height: 150px;
+  margin: 0 auto 24px;
+  position: relative;
+  width: 150px;
+}
+
+.exploreF,
+.exploreB {
+  background-color: #fff;
+  border-radius: 100%;
+  color: #0b0d17;
+  display: grid;
+  height: 100%;
+  place-content: center;
+  position: absolute;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.exploreF {
+  z-index: 1;
+}
+
+/* destinations */
+.pageSectionTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.pageSectionTitle span {
+  margin-right: 13px;
+  opacity: 0.25;
+}
+
+.destinations .destinationPreviewImg {
+  display: block;
+  margin: 35px auto;
+  width: 50%;
+}
+
+.destinationsNav,
+.crewsNav,
+.techsNav {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.destNavItem {
+  color: #d0d6f9;
+  letter-spacing: 0.2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.destNavItem.active {
+  color: #fff;
+}
+
+.destNavItem.active::after {
+  animation: lineAnimation 0.5s ease-out;
+  background-color: #fff;
+  bottom: -11px;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 80%;
+}
+
+.destinationName {
+  font-size: 3rem;
+  margin-top: 45px;
+  text-transform: uppercase;
+}
+
+.destinationDescription,
+.crewBio,
+.techDescription {
+  color: #d0d6f9;
+  line-height: 1.5rem;
+}
+
+.separationLine {
+  background-color: #383b4b;
+  height: 1px;
+  margin-bottom: 32px;
+  margin-top: 42px;
+  width: 100%;
+}
+
+.avgDestination,
+.travelTime {
+  margin-bottom: 32px;
+}
+
+.avgDestination h3,
+.travelTime h3,
+.technologies h3 {
+  color: #d0d6f9;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.destinationAverage,
+.destinationTime {
+  color: #fff !important;
+  font-family: 'Bellefair', serif;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+/* crews */
+.crewPreviewImg {
+  display: block;
+  margin: 35px auto 0;
+  width: 45%;
+}
+
+.crewSeparationLine {
+  background-color: #383b4b;
+  height: 1px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.crewsNav,
+.techsNav {
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.crewNavItem {
+  background-color: #fff;
+  border-radius: 100%;
+  height: 10px;
+  opacity: 0.17;
+  width: 10px;
+}
+
+.crewNavItem.active {
+  opacity: 1;
+}
+
+.crewRole {
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.crewName,
+.techName {
+  font-size: 1.5rem;
+  margin: 8px 0 16px;
+  text-transform: uppercase;
+}
+
+/* Technologies */
+.technologies {
+  margin: 24px auto;
+}
+
+.technologies .pageSectionTitle,
+.techDescription {
+  margin: 0 24px;
+}
+.techPreviewImg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 170px;
+  margin: 35px auto;
+  width: 100vw;
+}
+
+.techsNavItem {
+  border: solid 1px #fff;
+  border-radius: 100%;
+  color: #fff;
+  display: grid;
+  font-family: 'Bellefair', serif;
+  font-size: 1rem;
+  height: 40px;
+  place-items: center;
+  width: 40px;
+}
+
+.techsNavItem.active {
+  background-color: #fff;
+  color: #0b0d17;
+}
+
+/* ------------------- Media Queries ------------------- */
+/* Tablet */
+@media screen and (min-width: 768px) {
+  /* Navigation */
+  header {
+    margin-left: 38px;
+    padding: 0;
+  }
+
+  #navigation {
+    display: none;
+  }
+
+  #navigationFull {
+    background-color: rgba(256, 256, 256, 0.04);
+    display: grid;
+    height: 96px;
+    padding: 0 14px 0 48px;
+    place-items: center;
+  }
+
+  #menuItems {
+    display: flex;
+    font-family: 'Barlow Condensed', sans-serif;
+    gap: 22px;
+  }
+
+  #navigationFull span {
+    display: none;
+  }
+
+  #menuItems li {
+    margin: 0;
+    position: relative;
+  }
+
+  .menu-item.active::after {
+    animation: lineAnimation 0.5s ease-out;
+    background-color: #fff;
+    bottom: -38px;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 80%;
+  }
+
+  main {
+    margin: 38px;
+  }
+
+  .separationLine {
+    max-width: 573px;
+  }
+
+  /* index */
+  .index {
+    margin-bottom: 0;
+    padding-bottom: 38px;
+  }
+
+  .topIndex h1 {
+    font-size: 10rem;
+  }
+
+  .topIndex p:first-child {
+    font-size: 1.3rem;
+  }
+
+  .topIndex p:last-child {
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 464px;
+  }
+
+  .explore {
+    height: 242px;
+    width: 242px;
+  }
+
+  .exploreF h4 {
+    font-size: 2rem;
+  }
+
+  /* destinations */
+  .pageSectionTitle {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-align: left;
+  }
+
+  .destinations .destinationPreviewImg {
+    margin: 64px auto 53px;
+    width: 300px;
+  }
+
+  .destNavItem {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .destinationName {
+    font-size: 5rem;
+    margin-top: 32px;
+  }
+
+  .destinationDescription {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    margin: 0 auto;
+    max-width: 573px;
+  }
+
+  .destinations .separationLine {
+    margin: 61px auto 28px;
+  }
+
+  .destinationStats {
+    display: flex;
+    gap: 11px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .destinationStats div {
+    margin: 0;
+    padding: 0 40px;
+  }
+
+  .destinationStats h3 {
+    font-size: 1rem;
+  }
+
+  /* Crews */
+  .crews {
+    align-items: center;
+    display: grid;
+    grid-template-areas:
+      'title'
+      'role'
+      'name'
+      'bio'
+      'nav'
+      'img';
+    height: calc(100vh - 134px);
+    margin-bottom: 0;
+  }
+
+  .pageSectionTitle {
+    grid-area: title;
+    justify-self: start;
+  }
+
+  .crewRole {
+    font-size: 1.5rem;
+    grid-area: role;
+    margin-top: 60px;
+  }
+
+  .crewName {
+    font-size: 2.5rem;
+    grid-area: name;
+  }
+
+  .crewBio {
+    font-size: 1.3rem;
+    grid-area: bio;
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 520px;
+  }
+
+  .crewsNav {
+    grid-area: nav;
+  }
+
+  .crewNavItem {
+    cursor: pointer;
+  }
+
+  .crewPreviewImg {
+    grid-area: img;
+    height: 50vh;
+    margin-bottom: -23px;
+    width: auto;
+  }
+  .crewSeparationLine {
+    display: none;
+  }
+
+  /* Technologies */
+  .techPreviewImg {
+    height: 310px;
+    margin: 56px auto;
+  }
+
+  .techsNavItem {
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 60px;
+    width: 60px;
+  }
+
+  .techName {
+    font-size: 2.5rem;
+  }
+
+  .techDescription {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 520px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  /* Navigation */
+  header {
+    margin-left: 55px;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  header #logo {
+    width: 48px;
+  }
+
+  .navSeperationLine {
+    background-color: #fff;
+    height: 1px;
+    left: 112px;
+    opacity: 0.25;
+    position: absolute;
+    top: 50%;
+    width: 23%;
+    z-index: 100;
+  }
+
+  #navigationFull {
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+    background: rgba(62, 62, 62, 0.05);
+    padding: 0 125px;
+    width: 62vw;
+  }
+
+  #menuItems {
+    gap: 33px;
+  }
+
+  #navigationFull span {
+    display: inline;
+  }
+
+  #menuItems li {
+    font-size: 1.4rem;
+  }
+
+  .menu-item.active::after {
+    bottom: -29px;
+  }
+
+  main {
+    margin: 0 165px;
+    padding: 0;
+    position: absolute;
+    right: 50%;
+    text-align: left;
+    top: 50%;
+    transform: translate(64%, 80%);
+    width: calc(100vw - 320px);
+  }
+
+  .separationLine {
+    max-width: 573px;
+  }
+
+  /* index */
+  .index {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 0 !important;
+  }
+
+  .topIndex p:first-child {
+    font-size: 2rem;
+  }
+
+  .topIndex p:last-child {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    margin: 0;
+  }
+
+  .explore {
+    align-self: flex-end;
+    height: 274px;
+    justify-self: end !important;
+    margin: 0;
+    width: 274px;
+  }
+
+  /* destinations */
+  .destinations {
+    align-items: center;
+    column-gap: 157px;
+    display: grid;
+    grid-template-areas:
+      'title title'
+      'img nav'
+      'img name'
+      'img description'
+      'img sep'
+      'img stats';
+    height: auto;
+    transform: translate(64%, 22%);
+  }
+
+  .pageSectionTitle {
+    font-size: 2.4rem;
+    grid-area: title;
+    margin-bottom: 70px;
+  }
+
+  .destinations .destinationPreviewImg {
+    grid-area: img;
+    height: 445px;
+    justify-self: center;
+    margin: 0;
+    width: 445px;
+  }
+
+  .destinationsNav {
+    gap: 16px;
+    grid-area: nav;
+    justify-content: flex-start;
+  }
+
+  .destinationName {
+    font-size: 7rem;
+    grid-area: name;
+  }
+
+  .destinationDescription {
+    font-size: 1.5rem;
+    grid-area: description;
+    line-height: 2.7rem;
+    margin: 0;
+  }
+
+  .destinations .separationLine {
+    grid-area: sep;
+    margin: 36px 0 28px;
+  }
+
+  .destinationStats {
+    gap: 80px;
+    grid-area: stats;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .destinationStats div {
+    padding: 0;
+  }
+
+  /* Crews */
+  .crews {
+    align-items: center;
+    column-gap: 81px;
+    display: grid;
+    grid-template-areas:
+      'title img'
+      'role img'
+      'name img'
+      'bio img'
+      'nav img';
+    height: calc(100vh - 230px);
+    transform: translate(64%, 14%);
+  }
+
+  .crews .pageSectionTitle {
+    margin: 0;
+  }
+
+  .crewRole {
+    align-self: end;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .crewName {
+    font-size: 3.5rem;
+    margin: 0;
+  }
+
+  .crewBio {
+    align-self: start;
+    font-size: 1.5rem;
+    line-height: 2.7rem;
+    margin: 0;
+    max-width: 540px;
+  }
+
+  .crewsNav {
+    align-self: start;
+    justify-content: start;
+    margin: 0;
+  }
+
+  .crewNavItem {
+    height: 15px;
+    width: 15px;
+  }
+
+  .crewPreviewImg {
+    align-self: end;
+    height: auto;
+    margin: 0;
+    max-height: 712px;
+    width: auto;
+  }
+
+  /* Technologies */
+  .technologies {
+    align-items: center;
+    column-gap: 80px;
+    display: grid;
+    grid-template-areas:
+      'title title title'
+      'nav termin img'
+      'nav name img'
+      'nav description img';
+    grid-template-columns: auto 1fr auto;
+    height: auto;
+    margin: 0;
+    padding-left: 165px;
+    transform: translate(50%, 22%);
+    width: calc(100vw - 165px);
+  }
+
+  .technologies .pageSectionTitle {
+    grid-area: title;
+    margin: 0;
+  }
+
+  .technologies h3 {
+    align-self: end;
+    font-size: 2rem;
+    grid-area: termin;
+    margin: 0;
+  }
+
+  .techPreviewImg {
+    grid-area: img;
+    height: 527px;
+    justify-self: end;
+    margin: 0;
+    width: 515px;
+  }
+
+  .techsNav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 32px;
+    grid-area: nav;
+    margin: 0;
+  }
+
+  .techsNavItem {
+    font-size: 2rem;
+    height: 80px;
+    width: 80px;
+  }
+
+  .techName {
+    grid-area: name;
+    margin: 0;
+  }
+
+  .techDescription {
+    align-self: start;
+    grid-area: description;
+    margin: 0;
+  }
+}
+
+/* ------------------------ Animation ------------------------ */
+@keyframes lineAnimation {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 75%;
+  }
+}

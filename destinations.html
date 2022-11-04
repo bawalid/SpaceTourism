@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.cdnfonts.com/css/bellefair"
+      rel="stylesheet"
+    />
+    <title>Space tourism website | Destinations</title>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="./assets/shared/logo.svg" alt="logo" />
+      <nav id="navigation">
+        <img id="menuIcon" src="" />
+        <ul id="menuItems">
+          <li class="menu-item"><a href="index.html">00 Home</a></li>
+          <li class="menu-item">
+            <a href="destinations.html">01 Destination</a>
+          </li>
+          <li class="menu-item"><a href="crews.html">02 Crew</a></li>
+          <li class="menu-item">
+            <a href="technologies.html">03 Technology</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="navSeperationLine"></div>
+      <nav id="navigationFull">
+        <ul id="menuItems">
+          <li class="menu-item">
+            <a href="index.html"><span>00</span> Home</a>
+          </li>
+          <li class="menu-item active">
+            <a href="destinations.html"
+              ><span>01</span> Destination</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="crews.html"><span>02</span> Crew</a>
+          </li>
+          <li class="menu-item">
+            <a href="technologies.html"><span>03</span> Technology</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="destinations">
+      <h2 class="pageSectionTitle">
+        <span>01 </span>Pick your destination
+      </h2>
+      <img class="destinationPreviewImg" src="" alt="" />
+      <div class="destinationsNav"></div>
+      <h1 class="destinationName"></h1>
+      <p class="destinationDescription"></p>
+      <div class="separationLine"></div>
+      <div class="destinationStats">
+        <div class="avgDestination">
+          <h3>Avg. distance</h3>
+          <p class="destinationAverage"></p>
+        </div>
+        <div class="travelTime">
+          <h3>Est. travel time</h3>
+          <p class="destinationTime"></p>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="destinations.js"></script>
+    <script src="nav.js"></script>
+    <script src="pageBG.js"></script>
+  </body>
+</html>
