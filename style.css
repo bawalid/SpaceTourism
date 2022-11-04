@@ -708,7 +708,7 @@ p:last-child {
       'name img'
       'bio img'
       'nav img';
-    height: calc(100vh - 230px);
+    height: calc(100vh - 195px);
     transform: translate(64%, 14%);
   }
 
